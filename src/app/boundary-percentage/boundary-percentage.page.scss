@@ -1,0 +1,287 @@
+ion-content {
+
+  --background:
+    linear-gradient(
+      180deg,
+      #2b1a00 0%,
+      #120800 100%
+    );
+
+  color: white;
+}
+
+/* PAGE */
+
+.boundary-page {
+
+  padding: 18px;
+  padding-bottom: 40px;
+}
+
+/* HEADER */
+
+.top-bar {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.back-btn,
+.chart-btn {
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(255,255,255,0.07);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 0 18px rgba(255,214,0,0.20);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.back-btn ion-icon {
+
+  font-size: 21px;
+  color: white;
+}
+
+.title {
+
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: white;
+
+  text-align: center;
+}
+
+/* HEADER LINE */
+
+.header-line {
+
+  width: 100%;
+  height: 1px;
+
+  margin-bottom: 24px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,214,0,0.7),
+      transparent
+    );
+}
+
+/* FORM CARD */
+
+.form-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  padding: 10px 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,193,7,0.38),
+      rgba(110,60,0,0.94)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.14);
+
+  box-shadow:
+    0 0 45px rgba(255,214,0,0.20),
+    inset 0 0 18px rgba(255,255,255,0.04);
+
+  backdrop-filter: blur(20px);
+
+  margin-bottom: 24px;
+}
+
+/* BACKGROUND ICON */
+
+.graph-bg {
+
+  position: absolute;
+
+  right: 24px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 140px;
+
+  font-weight: 900;
+
+  color: rgba(255,255,255,0.08);
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+/* INPUT BOX */
+
+.input-box {
+
+  position: relative;
+  z-index: 2;
+
+  padding: 22px 0;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.12);
+}
+
+.input-box:last-child {
+
+  border-bottom: none;
+}
+
+/* INPUT */
+
+.input-box input {
+
+  width: 100%;
+
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.input-box input::placeholder {
+
+  color: rgba(255,255,255,0.82);
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* BUTTON */
+
+.calculate-btn {
+
+  width: 100%;
+
+  height: 60px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 40px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffb300,
+      #ffd600,
+      #ffec80
+    );
+
+  box-shadow:
+    0 0 28px rgba(255,214,0,0.35);
+
+  margin-bottom: 26px;
+}
+
+/* RESULT CARD */
+
+.result-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  padding: 24px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,193,7,0.30),
+      rgba(110,60,0,0.94)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.10);
+
+  box-shadow:
+    0 0 40px rgba(255,214,0,0.20);
+
+  backdrop-filter: blur(20px);
+
+  text-align: center;
+}
+
+.result-card h4 {
+
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  color: rgba(255,255,255,0.76);
+}
+
+.result-card h1 {
+
+  margin-top: 18px;
+  margin-bottom: 0;
+
+  font-size: 42px;
+  line-height: 1.12;
+
+  font-weight: 900;
+
+  color: white;
+}

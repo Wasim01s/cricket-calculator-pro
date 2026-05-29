@@ -1,0 +1,86 @@
+<ion-content fullscreen="true">
+
+  <div class="batting-page">
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+      <div class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+
+      <h1 class="title">
+        BATTING AVERAGE CALCULATOR
+      </h1>
+
+      <div class="chart-btn">
+        🏏
+      </div>
+
+    </div>
+
+    <div class="header-line"></div>
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+      <!-- BACKGROUND ICON -->
+
+      <div class="graph-bg">
+        🏏
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="runs"
+          placeholder="Runs Scored">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="outs"
+          placeholder="Times Out">
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button
+      class="calculate-btn"
+      (click)="calculateAverage()">
+
+      CALCULATE BATTING AVERAGE
+
+    </button>
+
+    <!-- RESULT -->
+
+    <div
+      class="result-card"
+      *ngIf="showResult">
+
+      <h4>CALCULATION RESULT</h4>
+
+      <h1>
+        AVERAGE:
+        {{ result }}
+      </h1>
+
+      <p *ngIf="result === 'INVALID'">
+        Please enter valid values.
+      </p>
+
+    </div>
+
+  </div>
+
+</ion-content>

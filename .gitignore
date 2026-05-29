@@ -1,0 +1,11 @@
+node_modules/
+.angular/
+www/
+dist/
+build/
+.gradle/
+android/.gradle/
+android/build/
+android/app/build/
+*.apk
+*.aab

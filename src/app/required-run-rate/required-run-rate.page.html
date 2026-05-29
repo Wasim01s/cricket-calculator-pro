@@ -1,0 +1,109 @@
+<ion-content fullscreen="true">
+
+  <div class="rrr-page">
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+      <div class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+
+      <h1 class="title">
+        REQUIRED RUN RATE
+      </h1>
+
+      <div class="chart-btn">
+        🎯
+      </div>
+
+    </div>
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+      <div class="graph-bg">
+        🎯
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="target"
+          placeholder="Target Runs">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="current"
+          placeholder="Current Runs">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="oversLeft"
+          placeholder="Overs Left">
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button
+      class="calculate-btn"
+      (click)="calculateRRR()">
+
+      CALCULATE REQUIRED RUN RATE
+
+    </button>
+
+    <!-- RESULT -->
+
+    <div
+      class="result-card"
+      *ngIf="showResult">
+
+      <h4>CALCULATION RESULT</h4>
+
+      <h1>
+        RRR:
+        {{ result }}
+      </h1>
+
+      <div
+        class="status"
+        *ngIf="result !== 'INVALID'">
+
+        <ion-icon
+          [name]="
+            +result <= 10
+            ? 'arrow-down-outline'
+            : 'arrow-up-outline'
+          ">
+        </ion-icon>
+
+        <span>
+          {{
+            +result <= 10
+            ? 'Easy Chase'
+            : 'Tough Chase'
+          }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

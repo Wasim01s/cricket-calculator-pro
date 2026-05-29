@@ -1,0 +1,407 @@
+ion-content {
+
+  --background:
+    linear-gradient(
+      180deg,
+      #2b1200,
+      #120700
+    );
+
+  color: white;
+}
+
+/* PAGE */
+
+.dls-page {
+
+  padding: 18px;
+  padding-bottom: 40px;
+
+  position: relative;
+}
+
+/* HEADER */
+
+.top-bar {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 8px;
+  margin-bottom: 26px;
+}
+
+.back-btn,
+.chart-btn {
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 18px rgba(255,152,0,0.18);
+}
+
+.back-btn ion-icon,
+.chart-btn ion-icon {
+
+  font-size: 22px;
+  color: white;
+}
+
+.title {
+
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: white;
+}
+
+/* FORM CARD */
+
+.form-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 34px;
+
+  padding: 18px 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,140,0,0.55),
+      rgba(110,45,0,0.92)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.14);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 0 40px rgba(255,140,0,0.25),
+    inset 0 0 22px rgba(255,255,255,0.05);
+
+  margin-bottom: 24px;
+}
+
+/* FIXED BG ICON */
+
+.graph-bg {
+
+  position: fixed;
+
+  right: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 145px;
+
+  color: rgba(255,200,100,0.10);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+/* INPUT BOX */
+
+.input-box {
+
+  position: relative;
+  z-index: 2;
+
+  padding: 18px 0;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.12);
+}
+
+.input-box:last-child {
+
+  border-bottom: none;
+}
+
+/* INPUT */
+
+.input-box input {
+
+  width: 100%;
+
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  color: white;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.input-box input::placeholder {
+
+  color: rgba(255,255,255,0.82);
+
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* BUTTON */
+
+.calculate-btn {
+
+  width: 100%;
+
+  height: 56px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 40px;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff9800,
+      #ffb347,
+      #ff7043
+    );
+
+  box-shadow:
+    0 0 30px rgba(255,152,0,0.40);
+
+  margin-top: 4px;
+  margin-bottom: 28px;
+}
+
+/* RESULT CARD */
+
+.result-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 34px;
+
+  padding: 26px 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,140,0,0.50),
+      rgba(90,35,0,0.92)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 0 40px rgba(255,152,0,0.22);
+
+  text-align: center;
+}
+
+.result-card h4 {
+
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+  color: rgba(255,255,255,0.78);
+}
+
+.result-card h1 {
+
+  margin-top: 18px;
+  margin-bottom: 14px;
+
+  font-size: 38px;
+  line-height: 1.08;
+
+  font-weight: 900;
+
+  color: white;
+}
+
+/* STATUS */
+
+.status {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-bottom: 4px;
+
+  color: #ffd180;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.status ion-icon {
+
+  font-size: 18px;
+}
+
+/* INTERRUPTION ROW */
+
+.interrupt-card {
+
+  margin-top: 18px;
+  margin-bottom: 20px;
+
+  position: relative;
+}
+
+/* SR BOX */
+
+.sr-box {
+
+  width: 62px;
+  height: 32px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff9800,
+      #ff5722
+    );
+}
+
+/* ADD BUTTON */
+
+.add-btn {
+
+  width: 100%;
+
+  height: 52px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 22px;
+
+  margin-top: 14px;
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff9800,
+      #ff7043
+    );
+
+  box-shadow:
+    0 0 22px rgba(255,152,0,0.25);
+}
+
+/* REMOVE BUTTON */
+
+.remove-btn {
+
+  width: 100%;
+
+  height: 48px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 18px;
+
+  margin-top: 18px;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff1744,
+      #d50000
+    );
+
+  box-shadow:
+    0 0 20px rgba(255,0,0,0.22);
+}
+
+/* SECTION TITLE */
+
+.section-title {
+
+  margin-top: 0;
+  margin-bottom: 18px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  color: white;
+}
+
+/* SECTION CARD */
+
+.section-card {
+
+  margin-bottom: 18px;
+}

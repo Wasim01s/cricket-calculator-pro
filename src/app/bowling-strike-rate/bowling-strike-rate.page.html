@@ -1,0 +1,81 @@
+<ion-content fullscreen="true">
+
+  <div class="strike-page">
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+      <div class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+
+      <h1 class="title">
+        BOWLING STRIKE RATE
+      </h1>
+
+      <div class="chart-btn">
+        <ion-icon name="podium-outline"></ion-icon>
+      </div>
+
+    </div>
+
+    <div class="header-line"></div>
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+      <ion-icon
+        class="graph-bg"
+        name="podium-outline">
+      </ion-icon>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="balls"
+          placeholder="Balls Bowled">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="wickets"
+          placeholder="Wickets Taken">
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button
+      class="calculate-btn"
+      (click)="calculateStrikeRate()">
+
+      CALCULATE STRIKE RATE
+
+    </button>
+
+    <!-- RESULT -->
+
+    <div
+      class="result-card"
+      *ngIf="showResult">
+
+      <h4>CALCULATION RESULT</h4>
+
+      <h1>
+        STRIKE RATE:
+        {{ result }}
+      </h1>
+
+    </div>
+
+  </div>
+
+</ion-content>

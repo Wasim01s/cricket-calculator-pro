@@ -1,0 +1,85 @@
+<ion-content fullscreen="true">
+
+  <div class="bowling-page">
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+      <div class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+
+      <h1 class="title">
+        BOWLING AVERAGE CALCULATOR
+      </h1>
+
+      <div class="chart-btn">
+        <ion-icon name="tennisball-outline"></ion-icon>
+      </div>
+
+    </div>
+
+    <!-- HEADER LINE -->
+
+    <div class="header-line"></div>
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+      <!-- BACKGROUND ICON -->
+
+      <ion-icon
+        class="graph-bg"
+        name="tennisball-outline">
+      </ion-icon>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="runs"
+          placeholder="Runs Conceded">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="wickets"
+          placeholder="Wickets Taken">
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button
+      class="calculate-btn"
+      (click)="calculateAverage()">
+
+      CALCULATE BOWLING AVERAGE
+
+    </button>
+
+    <!-- RESULT -->
+
+    <div
+      class="result-card"
+      *ngIf="showResult">
+
+      <h4>CALCULATION RESULT</h4>
+
+      <h1>
+        AVERAGE:
+        {{ result }}
+      </h1>
+
+    </div>
+
+  </div>
+
+</ion-content>

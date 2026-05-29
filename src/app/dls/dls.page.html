@@ -1,0 +1,254 @@
+<ion-content fullscreen="true">
+
+  <div class="dls-page">
+
+    <!-- HEADER -->
+
+    <div class="top-bar">
+
+      <div class="back-btn" routerLink="/home">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+
+      <h1 class="title">
+        DLS CALCULATOR
+      </h1>
+
+      <div class="chart-btn">
+        <ion-icon name="trophy-outline"></ion-icon>
+      </div>
+
+    </div>
+
+    <!-- MATCH DETAILS -->
+
+    <div class="form-card">
+
+      <ion-icon
+        class="graph-bg"
+        name="trophy-outline">
+      </ion-icon>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="totalOvers"
+          placeholder="Overs/Innings at Start of Match">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="team1Score"
+          placeholder="Team 1 Final Score">
+
+      </div>
+
+    </div>
+
+    <!-- FIRST INNINGS -->
+
+    <div class="section-card">
+
+      <h3 class="section-title">
+        FIRST INNINGS INTERRUPTIONS
+      </h3>
+
+      <!-- ROWS -->
+
+      <div
+        class="interrupt-card form-card"
+        *ngFor="let row of innings1Rows; let i = index">
+
+        <div class="sr-box">
+          SR{{ i + 1 }}
+        </div>
+
+        <div class="input-box">
+
+          <input
+            type="number"
+            [(ngModel)]="row.oversBowled"
+            placeholder="Overs Bowled">
+
+        </div>
+
+        <div class="input-box">
+
+          <input
+            type="number"
+            [(ngModel)]="row.runsScored"
+            placeholder="Runs Scored">
+
+        </div>
+
+        <div class="input-box">
+
+          <input
+            type="number"
+            [(ngModel)]="row.wickets"
+            placeholder="Wickets Lost">
+
+        </div>
+
+        <div class="input-box">
+
+          <input
+            type="number"
+            [(ngModel)]="row.oversLost"
+            placeholder="Overs Lost">
+
+        </div>
+
+        <button
+          *ngIf="innings1Rows.length > 1"
+          class="remove-btn"
+          (click)="removeRow1(i)">
+
+          REMOVE ROW
+
+        </button>
+
+      </div>
+
+      <!-- ADD BUTTON -->
+
+      <button
+        class="add-btn"
+        (click)="addRow1()">
+
+        ADD ROW
+
+      </button>
+
+    </div>
+
+    <!-- SECOND INNINGS -->
+
+    <div class="section-card">
+
+      <h3 class="section-title">
+        2ND INNINGS INTERRUPTIONS
+      </h3>
+
+      <div class="form-card">
+
+        <div class="input-box">
+
+          <input
+            type="number"
+            [(ngModel)]="oversStart2"
+            placeholder="Overs at Start of Innings">
+
+        </div>
+
+      </div>
+
+      <!-- ROWS -->
+
+      <div
+        class="interrupt-card form-card"
+        *ngFor="let row of innings2Rows; let i = index">
+
+        <div class="sr-box">
+          SR{{ i + 1 }}
+        </div>
+
+        <div class="input-box">
+
+          <input
+            type="number"
+            [(ngModel)]="row.oversBowled"
+            placeholder="Overs Bowled">
+
+        </div>
+
+        <div class="input-box">
+
+          <input
+            type="number"
+            [(ngModel)]="row.runsScored"
+            placeholder="Runs Scored">
+
+        </div>
+
+        <div class="input-box">
+
+          <input
+            type="number"
+            [(ngModel)]="row.wickets"
+            placeholder="Wickets Lost">
+
+        </div>
+
+        <div class="input-box">
+
+          <input
+            type="number"
+            [(ngModel)]="row.oversLost"
+            placeholder="Overs Lost">
+
+        </div>
+
+        <button
+          *ngIf="innings2Rows.length > 1"
+          class="remove-btn"
+          (click)="removeRow2(i)">
+
+          REMOVE ROW
+
+        </button>
+
+      </div>
+
+      <!-- ADD BUTTON -->
+
+      <button
+        class="add-btn"
+        (click)="addRow2()">
+
+        ADD ROW
+
+      </button>
+
+    </div>
+
+    <!-- CALCULATE BUTTON -->
+
+    <button
+      class="calculate-btn"
+      (click)="calculateDLS()">
+
+      CALCULATE DLS
+
+    </button>
+
+    <!-- RESULT -->
+
+    <div
+      class="result-card"
+      *ngIf="showResult">
+
+      <h4>CALCULATION RESULT</h4>
+
+      <h1>
+        TARGET:
+        {{ result }}
+      </h1>
+
+      <div class="status">
+
+        <ion-icon name="trophy-outline"></ion-icon>
+
+        <span>DLS Method Applied</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

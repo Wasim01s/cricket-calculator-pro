@@ -1,0 +1,79 @@
+<ion-content fullscreen="true">
+
+  <div class="boundary-page">
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+      <div class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+
+      <h1 class="title">
+        BOUNDARY PERCENTAGE CALCULATOR
+      </h1>
+
+      <div class="chart-btn">
+        %
+      </div>
+
+    </div>
+
+    <!-- HEADER LINE -->
+
+    <div class="header-line"></div>
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+      <div class="graph-bg">%</div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="boundaryRuns"
+          placeholder="Boundary Runs">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="totalRuns"
+          placeholder="Total Runs">
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button
+      class="calculate-btn"
+      (click)="calculateBoundaryPercentage()">
+
+      CALCULATE BOUNDARY %
+
+    </button>
+
+    <!-- RESULT -->
+
+    <div
+      class="result-card"
+      *ngIf="showResult">
+
+      <h4>CALCULATION RESULT</h4>
+
+      <h1>
+        {{ result }}%
+      </h1>
+
+    </div>
+
+  </div>
+
+</ion-content>

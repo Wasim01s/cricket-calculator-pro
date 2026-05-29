@@ -1,0 +1,109 @@
+<ion-content fullscreen="true">
+
+  <div class="strike-page">
+
+    <!-- HEADER -->
+
+    <div class="top-bar">
+
+      <div class="back-btn" routerLink="/home">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+
+      <h1 class="title">
+        STRIKE RATE CALCULATOR
+      </h1>
+
+      <div class="chart-btn">
+        <ion-icon name="speedometer-outline"></ion-icon>
+      </div>
+
+    </div>
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+      <ion-icon
+        class="graph-bg"
+        name="speedometer-outline">
+      </ion-icon>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="runs"
+          placeholder="Runs Scored">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="balls"
+          placeholder="Balls Faced">
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button
+      class="calculate-btn"
+      (click)="calculateStrikeRate()">
+
+      CALCULATE STRIKE RATE
+
+    </button>
+
+    <!-- RESULT -->
+
+    <div
+      class="result-card"
+      *ngIf="showResult">
+
+      <h4>CALCULATION RESULT</h4>
+
+      <h1>
+        STRIKE RATE:
+        {{ strikeRate }}
+      </h1>
+
+      <div
+        class="status"
+        *ngIf="strikeRate !== 'INVALID'">
+
+        <ion-icon
+          [name]="
+            +strikeRate >= 120
+            ? 'arrow-up-outline'
+            : 'arrow-down-outline'
+          ">
+        </ion-icon>
+
+        <span>
+          {{
+            +strikeRate < 80
+            ? 'Good Batting'
+            : +strikeRate < 120
+            ? 'Good Batting'
+            : +strikeRate < 160
+            ? 'Very Good Batting'
+            : 'Excellent Batting'
+          }}
+        </span>
+
+      </div>
+
+      <p *ngIf="strikeRate === 'INVALID'">
+        Please enter valid values.
+      </p>
+
+    </div>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,125 @@
+<ion-content fullscreen="true">
+
+  <div class="nrr-page">
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+      <div class="back-btn" routerLink="/home">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+
+      <h1 class="title">
+        NET RUN RATE CALCULATOR
+      </h1>
+
+      <div class="chart-btn">
+        <ion-icon name="stats-chart-outline"></ion-icon>
+      </div>
+
+    </div>
+
+<div class="header-line"></div>
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+      <ion-icon
+        class="graph-bg"
+        name="stats-chart-outline">
+      </ion-icon>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="runsScored"
+          placeholder="Runs Scored">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="oversFaced"
+          placeholder="Overs Faced">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="runsConceded"
+          placeholder="Runs Conceded">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="oversBowled"
+          placeholder="Overs Bowled">
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button
+      class="calculate-btn"
+      (click)="calculateNRR()">
+
+      CALCULATE NET RUN RATE
+
+    </button>
+
+<!-- RESULT -->
+
+<div
+  class="result-card"
+  *ngIf="showResult">
+
+  <h4>CALCULATION RESULT</h4>
+
+  <h1>
+    NET RUN RATE:
+    {{ netRunRate }}
+  </h1>
+
+  <div
+    class="status"
+    *ngIf="netRunRate !== 'INVALID'">
+
+    <ion-icon
+      [name]="
+        +netRunRate >= 0
+        ? 'arrow-up-outline'
+        : 'arrow-down-outline'
+      ">
+    </ion-icon>
+
+    <span>
+      {{
+        +netRunRate >= 0
+        ? 'Good Standing'
+        : 'Poor Standing'
+      }}
+    </span>
+
+  </div>
+
+  <p *ngIf="netRunRate === 'INVALID'">
+    Please enter valid values.
+  </p>
+
+</div>
+
+  </div>
+
+</ion-content>

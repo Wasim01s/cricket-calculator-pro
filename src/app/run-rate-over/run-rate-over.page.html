@@ -1,0 +1,83 @@
+<ion-content fullscreen="true">
+
+  <div class="runrate-page">
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+      <div class="back-btn" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+
+      <h1 class="title">
+        RUN RATE (OVER) CALCULATOR
+      </h1>
+
+      <div class="chart-btn">
+        <ion-icon name="speedometer-outline"></ion-icon>
+      </div>
+
+    </div>
+
+    <!-- HEADER LINE -->
+
+    <div class="header-line"></div>
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+      <ion-icon
+        class="graph-bg"
+        name="speedometer-outline">
+      </ion-icon>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="runs"
+          placeholder="Total Runs">
+
+      </div>
+
+      <div class="input-box">
+
+        <input
+          type="number"
+          [(ngModel)]="overs"
+          placeholder="Total Overs">
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button
+      class="calculate-btn"
+      (click)="calculateRunRate()">
+
+      CALCULATE RUN RATE
+
+    </button>
+
+    <!-- RESULT -->
+
+    <div
+      class="result-card"
+      *ngIf="showResult">
+
+      <h4>CALCULATION RESULT</h4>
+
+      <h1>
+        RUN RATE:
+        {{ result }}
+      </h1>
+
+    </div>
+
+  </div>
+
+</ion-content>
