@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {
   IonContent,
@@ -27,6 +27,12 @@ import {
   pieChartOutline
 } from 'ionicons/icons';
 
+import {
+  AdMob,
+  BannerAdPosition,
+  BannerAdSize
+} from '@capacitor-community/admob';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -41,7 +47,7 @@ import {
   ]
 })
 
-export class HomePage {
+export class HomePage implements OnInit {
 
   constructor(
     private menu: MenuController
@@ -71,6 +77,19 @@ export class HomePage {
 
       'pie-chart-outline': pieChartOutline
 
+    });
+
+  }
+
+  async ngOnInit() {
+
+    await AdMob.initialize();
+
+    await AdMob.showBanner({
+      adId: 'ca-app-pub-2335259902861755/5252678904',
+      adSize: BannerAdSize.BANNER,
+      position: BannerAdPosition.BOTTOM_CENTER,
+      margin: 0
     });
 
   }
