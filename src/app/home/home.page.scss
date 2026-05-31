@@ -539,3 +539,147 @@ ion-content {
 
   box-shadow: none !important;
 }
+
+/* ========================= */
+/* RESPONSIVE FIX PATCH */
+/* ========================= */
+
+.hero-card {
+  min-height: 330px !important;
+  height: auto !important;
+}
+
+.hero-player {
+  right: 0 !important;
+  bottom: 0 !important;
+  top: auto !important;
+
+  transform: none !important;
+
+  width: auto !important;
+  height: 100% !important;
+  max-width: 58% !important;
+
+  object-fit: contain !important;
+}
+
+.hero-text {
+  width: 55% !important;
+  max-width: 55% !important;
+}
+
+.hero-text p {
+  color: #ffffff !important;
+  font-size: clamp(13px, 2.5vw, 15px) !important;
+}
+
+.hero-text h2 {
+  color: #ffffff !important;
+
+  font-size: clamp(24px, 6vw, 40px) !important;
+
+  line-height: 1.1 !important;
+
+  word-break: break-word !important;
+
+  overflow-wrap: break-word !important;
+}
+
+.hero-text h3 {
+  color: #cbd5e1 !important;
+
+  font-size: clamp(12px, 2.5vw, 15px) !important;
+}
+
+.quick-card h2,
+.quick-card p {
+  color: white !important;
+}
+
+.quick-card h2 {
+  font-size: clamp(14px, 3.5vw, 20px) !important;
+}
+
+.quick-card p {
+  font-size: clamp(11px, 2.8vw, 14px) !important;
+}
+
+.tool-card h3 {
+  color: white !important;
+}
+
+.tool-card p {
+  color: #94a3b8 !important;
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+  .main-bg {
+    padding: 14px;
+  }
+
+  .logo-area h1 {
+    font-size: 24px;
+  }
+
+  .logo-area span {
+    font-size: 15px;
+  }
+
+  .hero-card {
+    min-height: 280px !important;
+  }
+
+  .hero-player {
+    max-width: 60% !important;
+  }
+
+  .hero-text {
+    width: 52% !important;
+    max-width: 52% !important;
+
+    padding: 18px !important;
+  }
+
+  .hero-text h2 {
+    font-size: 26px !important;
+  }
+
+  .hero-text h3 {
+    font-size: 12px !important;
+  }
+
+  .section-head span {
+    font-size: 20px;
+  }
+
+  .more-head h2 {
+    font-size: 20px;
+  }
+
+  .quick-grid {
+    gap: 10px;
+  }
+
+  .quick-card {
+    min-height: 150px;
+    padding: 12px;
+  }
+
+  .quick-card ion-icon {
+    width: 30px;
+    height: 30px;
+
+    padding: 12px;
+  }
+
+  .quick-card h2 {
+    font-size: 14px !important;
+  }
+
+  .quick-card p {
+    font-size: 11px !important;
+  }
+}
