@@ -20,6 +20,8 @@ import {
   arrowDownOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-strike-rate',
   templateUrl: './strike-rate.page.html',
@@ -48,7 +50,9 @@ export class StrikeRatePage {
 
   showResult = false;
 
-  constructor() {
+  constructor(
+    private adService: AdService
+  ) {
 
     addIcons({
       'arrow-back-outline': arrowBackOutline,
@@ -119,6 +123,8 @@ export class StrikeRatePage {
     }
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
 
   }
 

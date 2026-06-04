@@ -21,6 +21,8 @@ import {
   trophyOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-batting-average',
   templateUrl: './batting-average.page.html',
@@ -44,7 +46,8 @@ export class BattingAveragePage {
   showResult = false;
 
   constructor(
-    public location: Location
+    public location: Location,
+    private adService: AdService
   ) {
 
     addIcons({
@@ -79,6 +82,9 @@ export class BattingAveragePage {
     this.result = avg.toFixed(2);
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
+
   }
 
 }

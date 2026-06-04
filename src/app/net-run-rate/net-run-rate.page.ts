@@ -19,6 +19,8 @@ import {
   arrowUpOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-net-run-rate',
   templateUrl: './net-run-rate.page.html',
@@ -47,7 +49,9 @@ export class NetRunRatePage {
 
   showResult = false;
 
-  constructor() {
+  constructor(
+    private adService: AdService
+  ) {
 
     addIcons({
       'arrow-back-outline': arrowBackOutline,
@@ -90,6 +94,8 @@ export class NetRunRatePage {
       result.toFixed(2);
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
 
   }
 

@@ -86,7 +86,7 @@ export class HomePage implements OnInit {
     await AdMob.initialize();
 
     await AdMob.showBanner({
-      adId: 'ca-app-pub-3940256099942544/6300978111',
+      adId: 'ca-app-pub-2335259902861755/5252678904',
       adSize: BannerAdSize.BANNER,
       position: BannerAdPosition.BOTTOM_CENTER,
       margin: 0

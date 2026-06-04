@@ -21,6 +21,8 @@ import {
   podiumOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-bowling-strike-rate',
   templateUrl: './bowling-strike-rate.page.html',
@@ -44,7 +46,8 @@ export class BowlingStrikeRatePage {
   showResult = false;
 
   constructor(
-    public location: Location
+    public location: Location,
+    private adService: AdService
   ) {
 
     addIcons({
@@ -81,6 +84,9 @@ export class BowlingStrikeRatePage {
     this.result = sr.toFixed(2);
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
+
   }
 
 }

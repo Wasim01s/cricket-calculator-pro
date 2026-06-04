@@ -21,6 +21,8 @@ import {
   tennisballOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-bowling-average',
   templateUrl: './bowling-average.page.html',
@@ -44,7 +46,8 @@ export class BowlingAveragePage {
   showResult = false;
 
   constructor(
-    public location: Location
+    public location: Location,
+    private adService: AdService
   ) {
 
     addIcons({
@@ -81,6 +84,9 @@ export class BowlingAveragePage {
     this.result = avg.toFixed(2);
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
+
   }
 
 }

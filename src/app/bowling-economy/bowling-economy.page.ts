@@ -21,6 +21,8 @@ import {
   tennisballOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-bowling-economy',
   templateUrl: './bowling-economy.page.html',
@@ -44,7 +46,8 @@ export class BowlingEconomyPage {
   showResult = false;
 
   constructor(
-    public location: Location
+    public location: Location,
+    private adService: AdService
   ) {
 
     addIcons({
@@ -81,6 +84,9 @@ export class BowlingEconomyPage {
     this.result = eco.toFixed(2);
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
+
   }
 
 }

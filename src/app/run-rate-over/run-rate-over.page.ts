@@ -21,6 +21,8 @@ import {
   speedometerOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-run-rate-over',
   templateUrl: './run-rate-over.page.html',
@@ -44,7 +46,8 @@ export class RunRateOverPage {
   showResult = false;
 
   constructor(
-    public location: Location
+    public location: Location,
+    private adService: AdService
   ) {
 
     addIcons({
@@ -81,6 +84,9 @@ export class RunRateOverPage {
     this.result = rr.toFixed(2);
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
+
   }
 
 }

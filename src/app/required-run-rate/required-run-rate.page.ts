@@ -22,6 +22,8 @@ import {
   arrowDownOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-required-run-rate',
   templateUrl: './required-run-rate.page.html',
@@ -46,7 +48,8 @@ export class RequiredRunRatePage {
   showResult = false;
 
   constructor(
-    public location: Location
+    public location: Location,
+    private adService: AdService
   ) {
 
     addIcons({
@@ -88,6 +91,9 @@ export class RequiredRunRatePage {
     this.result = rrr.toFixed(2);
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
+
   }
 
 }

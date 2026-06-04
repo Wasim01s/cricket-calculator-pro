@@ -23,6 +23,8 @@ import {
   arrowDownOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-boundary-percentage',
   templateUrl: './boundary-percentage.page.html',
@@ -46,7 +48,8 @@ export class BoundaryPercentagePage {
   showResult = false;
 
   constructor(
-    public location: Location
+    public location: Location,
+    private adService: AdService
   ) {
 
     addIcons({
@@ -85,6 +88,9 @@ export class BoundaryPercentagePage {
     this.result = percentage.toFixed(2);
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
+
   }
 
 }

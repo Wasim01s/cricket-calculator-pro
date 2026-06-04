@@ -18,6 +18,8 @@ import {
   trophyOutline
 } from 'ionicons/icons';
 
+import { AdService } from '../services/ad.service';
+
 @Component({
   selector: 'app-dls',
   templateUrl: './dls.page.html',
@@ -62,7 +64,9 @@ export class DlsPage {
     }
   ];
 
-  constructor() {
+  constructor(
+    private adService: AdService
+  ) {
 
     addIcons({
       'arrow-back-outline': arrowBackOutline,
@@ -124,8 +128,6 @@ export class DlsPage {
     const originalOvers =
       Number(this.totalOvers);
 
-    /* SECOND INNINGS OVERS */
-
     let revisedOvers =
       Number(this.oversStart2 || originalOvers);
 
@@ -146,8 +148,6 @@ export class DlsPage {
 
     }
 
-    /* WICKETS LOST */
-
     let wicketsLost = 0;
 
     this.innings2Rows.forEach((row: any) => {
@@ -157,23 +157,14 @@ export class DlsPage {
 
     });
 
-    /* ADVANCED RESOURCE PERCENT */
-
     const oversRatio =
       revisedOvers / originalOvers;
-
-    /*
-      Better T20 resource scaling
-      closer to real DLS behavior
-    */
 
     let resourcePercent =
       Math.pow(
         oversRatio,
         0.82
       ) * 100;
-
-    /* wicket penalty */
 
     resourcePercent -=
       wicketsLost * 2.5;
@@ -183,8 +174,6 @@ export class DlsPage {
       resourcePercent = 10;
 
     }
-
-    /* DLS TARGET */
 
     const parScore =
       (
@@ -199,6 +188,8 @@ export class DlsPage {
       revisedTarget.toString();
 
     this.showResult = true;
+
+    this.adService.showInterstitialIfNeeded();
 
   }
 
