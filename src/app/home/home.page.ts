@@ -4,8 +4,7 @@ import {
   IonContent,
   IonIcon,
   IonMenu,
-  MenuController,
-  Platform
+  MenuController
 } from '@ionic/angular/standalone';
 
 import { CommonModule } from '@angular/common';
@@ -34,8 +33,6 @@ import {
   BannerAdSize
 } from '@capacitor-community/admob';
 
-import { App } from '@capacitor/app';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -56,8 +53,7 @@ export class HomePage implements OnInit {
   homeContent!: IonContent;
 
   constructor(
-    private menu: MenuController,
-    private platform: Platform
+    private menu: MenuController
   ) {
 
     addIcons({
@@ -98,29 +94,6 @@ export class HomePage implements OnInit {
       position: BannerAdPosition.BOTTOM_CENTER,
       margin: 0
     });
-
-    this.platform.backButton.subscribeWithPriority(
-      9999,
-      async () => {
-
-        const scrollElement =
-          await this.homeContent.getScrollElement();
-
-        const currentScroll =
-          scrollElement.scrollTop;
-
-        if (currentScroll > 50) {
-
-          this.homeContent.scrollToTop(300);
-
-        } else {
-
-          App.exitApp();
-
-        }
-
-      }
-    );
 
   }
 
