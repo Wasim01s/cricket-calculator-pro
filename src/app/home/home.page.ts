@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {
   IonContent,
@@ -48,9 +48,6 @@ import {
 })
 
 export class HomePage implements OnInit {
-
-  @ViewChild('homeContent', { static: false })
-  homeContent!: IonContent;
 
   constructor(
     private menu: MenuController
