@@ -40,7 +40,7 @@ jobs:
       - name: Restore keystore.properties
         run: |
           cat > android/keystore.properties <<EOF
-          storeFile=app/my-release-key.jks
+          storeFile=my-release-key.jks
           storePassword=${{ secrets.KEYSTORE_PASSWORD }}
           keyAlias=${{ secrets.KEY_ALIAS }}
           keyPassword=${{ secrets.KEY_PASSWORD }}
