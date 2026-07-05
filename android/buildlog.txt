@@ -1,0 +1,52 @@
+Initialized native services in: /data/data/com.termux/files/home/.gradle/native
+Initialized jansi services in: /data/data/com.termux/files/home/.gradle/native
+The client will now receive all logging from the daemon (pid: 2807). The daemon log file: /data/data/com.termux/files/home/.gradle/daemon/8.14.3/daemon-2807.out.log
+Starting 4th build in daemon [uptime: 16 mins 10.87 secs, performance: 98%, GC rate: 0.00/s, heap usage: 0% of 1.5 GiB]
+Using 4 worker leases.
+Watching the file system is configured to be enabled if available
+File system watching is inactive
+Starting Build
+Settings evaluated using settings file '/data/data/com.termux/files/home/myapp/android/settings.gradle'.
+Projects loaded. Root project using build file '/data/data/com.termux/files/home/myapp/android/build.gradle'.
+Included projects: [root project 'android', project ':app', project ':capacitor-android', project ':capacitor-app', project ':capacitor-community-admob', project ':capacitor-cordova-android-plugins', project ':capacitor-haptics', project ':capacitor-keyboard', project ':capacitor-status-bar']
+
+> Configure project :
+Evaluating root project 'android' using build file '/data/data/com.termux/files/home/myapp/android/build.gradle'.
+Invalidating in-memory cache of /data/data/com.termux/files/home/.gradle/caches/journal-1/file-access.bin
+Invalidating in-memory cache of /data/data/com.termux/files/home/.gradle/caches/8.14.3/fileHashes/fileHashes.bin
+Invalidating in-memory cache of /data/data/com.termux/files/home/.gradle/caches/8.14.3/fileHashes/resourceHashesCache.bin
+
+> Configure project :app
+Evaluating project ':app' using build file '/data/data/com.termux/files/home/myapp/android/app/build.gradle'.
+Using default execution profile
+google-services.json not found, google-services plugin not applied. Push Notifications won't work
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+
+> Configure project :capacitor-android
+Evaluating project ':capacitor-android' using build file '/data/data/com.termux/files/home/myapp/node_modules/@capacitor/android/capacitor/build.gradle'.
+Using default execution profile
+
+> Configure project :capacitor-app
+Evaluating project ':capacitor-app' using build file '/data/data/com.termux/files/home/myapp/node_modules/@capacitor/app/android/build.gradle'.
+Using default execution profile
+
+> Configure project :capacitor-community-admob
+Evaluating project ':capacitor-community-admob' using build file '/data/data/com.termux/files/home/myapp/node_modules/@capacitor-community/admob/android/build.gradle'.
+Caching disabled for Groovy DSL script compilation (cp_proj) because:
+  Build cache is disabled
+  Not worth caching.
+Compiling build file '/data/data/com.termux/files/home/myapp/node_modules/@capacitor-community/admob/android/build.gradle' using SubsetScriptTransformer.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring project ':capacitor-community-admob'.
+> java.nio.BufferOverflowException (no error message)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 20s
