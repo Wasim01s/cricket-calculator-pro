@@ -9,3 +9,5 @@ android/build/
 android/app/build/
 *.apk
 *.aab
+android/keystore.properties
+android/app/my-release-key.jks
