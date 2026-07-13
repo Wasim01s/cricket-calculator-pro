@@ -83,5 +83,10 @@ export const routes: Routes = [
     path: 'run-rate-over',
     loadComponent: () => import('./run-rate-over/run-rate-over.page').then( m => m.RunRateOverPage)
   },
+  {
+    path: 'premium',
+    loadComponent: () => import('./premium/premium.page').then( m => m.PremiumPage)
+  },
+  {
 
 ];
